@@ -1,0 +1,23 @@
+{% extends "quiz_base.html"%}
+{% block content %}
+<div class="quiz-board" style="margin-top:25px;">
+<form action="/" method="POST">
+    <label for="name" style="margin-top:10px;margin-bottom:10px">Provide your Fullname</label>
+    <input type="text" name="name" placeholder="Your Fullname" style="width:200px;font-size:16px" required>
+
+
+   <input type="submit" value="Enter Site">
+</form>
+
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+    <ul class=flashes>
+    {% for message in messages %}
+      <li>{{ message }}</li>
+    {% endfor %}
+    </ul>
+  {% endif %}
+{% endwith %}
+
+</div>
+{% endblock %}

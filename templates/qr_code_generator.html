@@ -1,0 +1,79 @@
+{% extends "base_template.html" %}
+{% block content %}
+
+
+<style>
+    .qrcode {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        margin:auto;
+        width: 600px;
+    }
+
+
+    form {
+        display:flex;
+        flex-direction: column;
+        padding-top: 1%;
+    }
+
+    input[type=text] {
+    border-radius: 4px;
+    background-color: #3CBC8D;
+    color: white;
+    font-size: 20px;
+    margin-bottom: 10px;
+    }
+
+    form label {
+        font-weight:bolder;
+        padding-bottom:15px;
+
+    }
+
+    form input[type="submit"] {
+        padding: 15px;
+        background: #2048a3;
+        color: white;
+        border-radius: 5px;
+        transition: 0.5s;
+        font-size: 20px;
+        font-weight: bolder;
+        border-style: none;
+        cursor: pointer;
+    }
+
+    form input[type="submit"]:hover {
+        border-style: none;
+        border-radius: 15px;
+        background: rgb(255, 174, 0);
+        color: black;
+        font-weight: bolder;
+        letter-spacing:2px;
+    }
+</style>
+
+<div class='qrcode'>
+    <h3>QR Code Generator</h3>
+
+    <img src="/static/images/qr_code_generator.png" style="width:600px;object-fit: cover;"/>
+
+    <p>QR Codes, the black and white pattern with which we have all got familiar with stands for "Quick Response."
+    It is a 2-Dimensional barcode implemented by Japanese Engineer Masahiro Hara and his team in 1994.</p>
+    <p>QR codes are capable of storing lots of data. A QR code uses four standardized encoding modes (numeric, alphanumeric, byte/binary and kanji and kanji. </p>
+
+        <form method="post" action="/qr_code_generator" class="form=qr">
+            <label>Enter URL</label>
+            <pre>Example: www.google.com</pre>
+            <input type="text" name="url"/>
+            <input type="submit" value="Generate QR Code"/>
+        </form>
+
+    {% if getURL %}
+
+        <img src="{{ qrcode(getURL) }}" style="padding-top:15px">
+        <h3>Save the image to your computer as use them on printed materials like cards, t-shirts, packaging, books and more..</h3>
+        {% endif %}
+    {% endblock %}
+
+</div>
+

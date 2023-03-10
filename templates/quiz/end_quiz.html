@@ -1,0 +1,56 @@
+{% extends "quiz_base.html"%}
+{% block content %}
+
+
+
+<div class="quiz-board">
+
+
+<h3>Quiz Completed. Well Done!!</h3>
+
+{% if quiz_responses %}
+    <table>
+        <tr>
+        <th>Question</th>
+        <th>Response</th>
+    </tr>
+    {% for r in quiz_responses %}
+
+    <tr>
+        <td>{{r.question}}</td>
+        {% if r.response %}
+            <td style="background-color:green;color:white;padding:10px">Correct</td>
+        {% else %}
+            <td style="background-color:red; color:white;padding:10px">Wrong</td>
+        {% endif %}
+    </tr>
+
+    {% endfor %}
+    </table>
+
+{% endif %}
+
+
+
+
+</div>
+
+<footer>
+    <div class="row">
+        <div class="column">
+
+        </div>
+        <div class="column" style="margin-top: 0.35%;">
+
+        </div>
+
+        <div class="column">
+
+        </div>
+        <div class="column">
+
+        </div>
+    </div>
+</footer>
+
+{% endblock %}

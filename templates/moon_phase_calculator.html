@@ -1,0 +1,77 @@
+{% extends "base_template.html" %}
+{% block content %}
+<style>
+    .moon_phase_calculator {
+         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        margin:auto;
+        width:800px;
+        /*background-image: url(https://www.esa.int/extension/pillars/design/pillars/images/nebula.jpg);*/
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: fixed;
+
+    }
+
+    .phase_calculator {
+        padding: 25px;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        padding-left: 15%;
+    }
+    .phase_calculator img {
+        border-radius:100%;
+        width:18%;
+    }
+
+    form input[type="date"] {
+        padding: 1.5%;
+        margin-top: 5px;
+        margin-bottom: 5px;
+        border: 2px solid rgb(255, 174, 0);
+    }
+    form input[type="submit"] {
+        padding: 2%;
+        border: 2px solid rgb(255, 174, 0);
+        color: black;
+        background: none;
+        cursor: pointer;
+        transition: 0.5s;
+    }
+    form input[type="submit"]:hover {
+        border-radius: 100%;
+        background-image: url(https://image.shutterstock.com/image-illustration/deep-space-high-definition-star-260nw-519356689.jpg);
+    }
+    h2 span {
+        padding-left: 5%;
+        font-style: italic;
+    }
+
+
+</style>
+<div class="moon_phase_calculator">
+
+    <h3>Moon Phase Calculator</h3>
+
+        <img src="/static/images/moon_phase_calculator.png" style="width:800px;object-fit: cover;"/>
+
+        <p style="color:white">Did you know that the Moon has 8 distinct phases and that the Moon's gravitational pull is
+        extremely powerful which can impact personal health significantly?</p>
+
+
+    <div class="phase_calculator">
+        <h2>Next Full Moon<span>{{ nextfull }}</span></h2>
+        <h2>Next New Moon<span>{{ nextnew }}</span></h2>
+        <form method="post" action="/moon_phase_calculator">
+            <br/>
+            <input type="date" id="date" name="date">
+            <input type="submit" value="Submit Date">
+        </form>
+        {{ error_msg }}
+        <br/>
+        {% if moonphase != "" %}
+    <h3>It's a {{ moonphase[0][0] }} on {{ moonphase[1] }} in the Northern Hemisphere</h3>
+    <br/>
+    <img src="{{ moonphase[0][1] }}"/>
+    {% endif %}
+        <br/>
+    </div>
+{% endblock %}

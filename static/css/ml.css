@@ -1,0 +1,162 @@
+
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:700,300);
+
+body{
+    background-color: whitesmoke;
+    margin:0px;
+}
+
+:root{
+  --font1: 'Open Sans', Helvetica, sans-serif;
+}
+
+ul.topnav {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #fff;
+}
+
+li {
+  color: black !important;
+  font-size: 15px !important;
+  font-family: var(--paragraphs) !important;
+}
+
+ul.topnav li {
+  float: left;
+}
+
+ul.topnav li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  color: #696969;
+}
+
+ul.topnav li a:hover:not(.active) {
+  color: #171717;
+}
+
+ul.topnav li a.active {
+  width: 100%;
+}
+
+ul.topnav li.right {
+  float: right;
+  text-transform: uppercase;
+}
+
+a:link,a:hover,a:visited{
+  color:white;
+  font-weight: bold;
+  /* text-decoration: none; */
+}
+
+
+
+
+.container{
+  position:fixed;
+  top: 50%;
+  left:50%;
+  transform: translate(-50%, -50%);
+
+  padding-top: 50px;;
+  width: 600px;
+  height: 60%;
+  background-color: #63a4ff;
+  background-image: linear-gradient(315deg, #63a4ff 0%, #83eaf1 74%);
+
+  display:grid;
+  grid-template-columns: 80%;
+  grid-template-rows: 1fr 10% 10% 1fr;
+  justify-content: center;
+  grid-template-areas: 
+  "header"
+  "title"
+  "sub"
+  "fileform";
+  /* align-items: flex-start; */
+}
+
+.ml-header{
+  place-self: start;
+}
+
+.ml-header h3{
+  font-family: var(--font1);
+  font-size: 2em;
+}
+.details{
+  /* padding-left: 50px;
+  text-align: left; */
+  font-family: var(--font1);
+  font-size: 1.1em;
+}
+
+
+
+.title{
+  grid-area: title;
+  font-family: var(--font1);
+  font-size: 2em;
+  text-align: left;
+  place-self: center start;
+}
+
+.sub{
+  font-family: var(--font1);
+  font-size: 1em;
+}
+
+.fileform{
+  padding: 30px;
+  background:white;
+  place-self: start;
+  font-family: var(--font1);
+  border-radius: 0 0 25% 0;
+  
+}
+
+.alert-warning{
+  background-color: red;
+  color: white;
+}
+
+.form{
+  display:flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+
+
+
+
+
+.dataframe {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  .dataframe td, .dataframe th {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+  
+  .dataframe tr:nth-child(even){background-color: #f2f2f2;}
+  
+  .dataframe tr:hover {background-color: #ddd;}
+  
+  .dataframe th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #267df7;
+    color: white;
+  }

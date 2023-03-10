@@ -1,0 +1,78 @@
+{% extends "quiz_base.html"%}
+{% block content %}
+
+
+
+<div class="quiz-board">
+
+
+{% if session["current_quiz"] %}
+
+
+
+<h2>Question {{ session["current_quiz"]["id"] }} of {{ session["total_quiz"] }}</h2>
+
+<h3 class="question">{{ session["current_quiz"]["question"] }}</h3>
+
+{% if session["current_quiz"]["image"] %}
+<img src="/static/images/{{session['current_quiz']['image']}}" style="padding-bottom:10px;"/>
+{% endif %}
+
+<form action="/quiz" method="POST">
+    {% for choice in session["current_quiz"]["choices"] %}
+    <div class="choice"><input type="radio" name="given_answer" value="{{ choice }}" required><label>{{ choice }}</label></div>
+    {% endfor %}
+<input type="submit" name="submit_btn" value="Submit Answer">
+
+</form>
+
+
+
+{% with messages = get_flashed_messages(with_categories=true) %}
+  {% if messages %}
+    {% for category, message in messages %}
+
+        {% if category == "correct" %}
+            <h3 class="correct">{{ message }}</h3>
+
+        {% elif category == "wrong" %}
+            <h3 class="wrong">{{ message }}</h3>
+
+
+        {% elif category == "completed" %}
+            <h3 class="correct">{{ message }}</h3>
+        {% endif %}
+
+    {% endfor %}
+
+  {% endif %}
+{% endwith %}
+
+
+{% endif %}
+
+{% if percentage %}
+<h3 class="percentage">{{ percentage }}% students answered the previous question correctly</h3>
+{% endif %}
+
+</div>
+
+<footer>
+    <div class="row">
+        <div class="column">
+
+        </div>
+        <div class="column" style="margin-top: 0.35%;">
+
+        </div>
+
+        <div class="column">
+
+        </div>
+        <div class="column">
+
+        </div>
+    </div>
+</footer>
+
+{% endblock %}

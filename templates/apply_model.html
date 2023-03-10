@@ -1,0 +1,102 @@
+<html>
+<head>
+<title>Apply ML Model - Probability of Default</title>
+<link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/main.css')}}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/ml.css') }}">
+</head>
+<body style="display:flex;flex-direction:column">
+
+    <ul class="topnav">
+        <li><a class="active" href=""><img class="ainlogo" src="http://eibfs.herokuapp.com/static/img/eifslogo.png" alt=""></a></li>
+        <li class="right" style="margin-top: 1.5%;"><a href="/logout">logout</a></li>
+        <li class="right" style="margin-top: 1.5%;"><a href="/quiz">Quiz</a></li>
+        <li class="right" style="margin-top: 1.5%;"><a href="/poll">Poll</a></li>
+        <li class="right" style="margin-top: 1.5%;"><a href="/course/1">Data Literacy</a></li>
+    </ul>
+
+    
+    
+      <div class="container">
+
+        <div class="ml-header">
+            <h3>Instructions</h3>
+            <span class="details">
+                This mock application is based on a sample model created on 
+                <strong>Probability of Default</strong>. View the full notebook <a href="https://www.kaggle.com/penroselearning/probability-of-default-bank-loan-data" target="_blank">here</a></span>
+            <span class="details">
+                <br><br>The derived model has already been plugged into this application. <a href="https://github.com/penroselearning/databank/raw/master/Financial/bank_data.csv.zip">Download</a> the sample csv file to be used for the prediction.
+            Access the full code on 
+            <a href="https://github.com/sunil-mnair/flask-ml-prediction" target="_blank">github</a>.</span>
+
+                
+            
+            <hr>
+            <!-- <p class="details">View the complete notebook </p>
+
+            <p class="details">The model has already been plugged into the application, upload the sample dataset to make the prediction</p> -->
+    
+        </div>
+
+        <div class="title">
+              <span>Apply the Model</span>
+              
+        </div>
+
+        <div class="sub">
+            <span>Probability of Default</span>
+      </div>
+        
+    {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+    {% for category, message in messages %}
+    
+    <div class="alert-warning">
+        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+        <strong>Error: </strong>{{message}}
+    </div>
+    
+    {% endfor %}
+    {% endif %}
+    {% endwith %} 
+
+
+      <div class="fileform">
+        <form method="post" enctype="multipart/form-data" class="form">
+                    
+            {{ form.csrf_token }}
+            {{ form.hidden_tag() }}
+           
+           
+            <label>Upload the Sample CSV File</label>
+            {{ form.new_data }}
+
+            {% for error in form.new_data.errors %}
+            <small class="text-danger">{{ error }}</small>  
+            {% endfor %}
+
+            <input type="submit" value="Predict">
+        </form>
+      </div>
+
+      </div>
+
+      <footer>
+        <div class="row">
+            <div class="column">
+                
+            </div>
+            <div class="column" style="margin-top: 0.35%;">
+                
+            </div>
+            
+            <div class="column">
+                
+            </div>
+            <div class="column">
+                
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,46 @@
+body{
+    margin: 0;
+    /* background-color: #facd85; */
+    
+
+  }
+
+  .container{
+    display:grid;
+    grid-template-rows: auto auto;
+  }
+
+  .header{
+    background-color: white;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    
+  }
+
+  .instructions{
+    background-color: white;
+    padding: 5px 20px 25px 25px;
+    width:50%;
+    margin:auto;
+    border-radius: 10px;
+    margin-bottom: 25px;
+    font-family: 'Varela Round', sans-serif;
+  }
+
+  h1{
+    padding-top:10px;
+    font-family: 'Varela Round', sans-serif;
+    text-align: center;
+    font-size: 3em;
+    text-shadow: 1px 2px 5px white;
+  }
+
+  li{
+    line-height: 200%;
+    margin-left: -10px;
+  }
+
+  
+
+  

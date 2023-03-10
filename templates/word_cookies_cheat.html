@@ -1,0 +1,76 @@
+{% extends "base_template.html" %}
+{% block content %}
+<style>
+
+  .word_cookies_cheat {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        margin:auto;
+        width:500px;
+    }
+    form input[name="letters"] {
+        padding: 1%;
+        border: 2px solid rgb(255, 174, 0);
+        border-radius: 5px;
+    }
+    form input[name="letters"]::after {
+        border: grey 1px solid;
+    }
+    form input[type="submit"] {
+        padding: 15px;
+        width: 15%;
+        background: #2048a3;
+        color: white;
+        transition: 0.5s;
+        font-weight: bolder;
+        border-style: none;
+        border-radius: 15px;
+    }
+    form input[type="submit"]:hover {
+        border-style: none;
+        border-radius: 15px;
+        background: rgb(255, 174, 0);
+        color: black;
+        font-weight: bolder;
+    }
+</style>
+<div class="word_cookies_cheat">
+
+    <h3>The Word Cookies Cheat App</h3>
+
+        <img src="/static/images/word_cookies_cheat_app.png" style="width:500px;object-fit: cover;"/>
+
+        <p>The addictive word game now has a Fun Cheat. Download the Game from <a href="https://play.google.com/store/apps/details?hl=en&id=com.bitmango.go.wordcookies" target="_blank">Play Store for Android</a> and <a href="https://apps.apple.com/us/app/word-cookies/id1153883316" target="_blank">App Store for iOS</a></p>
+
+    <h6 style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;letter-spacing: 1.5px;">
+        Provide a random set of Alphabets in the field below</h6>
+    <form method="post" action="/word_cookies_cheat">
+        <p><input name="letters" /></p>
+        <p><input type="submit" value="List Words" style="width:125px"/></p>
+    </form>
+    {{ error_msg }}
+
+
+{% if solution!="" %}
+
+    {% for c,words in solution[1][0].items() %}
+
+    <h4>{{ c }} letters - {{ words | length }} word(s)</h4>
+
+    {% set items = words | length %}
+
+    {% for x in range(items) %}
+
+    <span>
+        {% if x == items - 1 %}
+        {{ words[x] }}
+        {% else %}
+        {{ words[x] }},
+        {% endif %}
+    </span>
+    {% endfor %}
+    {% endfor %}
+
+    {% endif %}
+</div>
+
+{% endblock %}

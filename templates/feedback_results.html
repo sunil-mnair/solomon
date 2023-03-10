@@ -1,0 +1,148 @@
+{% extends "base_template.html" %}
+{% block content %}
+
+
+{% with messages = get_flashed_messages(with_categories=true) %}
+  {% if messages %}
+    {% for category, message in messages %}
+
+        {% if category == "correct" %}
+            <h3 class="correct">{{ message }}</h3>
+        {% endif %}
+
+    {% endfor %}
+
+  {% endif %}
+{% endwith %}
+
+<div class="charts">
+    <div>
+        <h5>% Training Objectives Achieved</h5>
+        <canvas id="objs"></canvas>
+    </div>
+    <div>
+        <h5>% of Ratings</h5>
+        <canvas id="ratings"></canvas>
+    </div>
+    <div>
+        <h5>% of Likes</h5>
+        <canvas id="likes"></canvas>
+    </div>
+    <div>
+        <h5>% of Dislikes</h5>
+        <canvas id="dislikes"></canvas>
+    </div>
+</div>
+
+
+<table class="table feedback_table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">10 Recent Comments</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for comment in comments %}
+        <tr>
+        <td>{{comment[0]}}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+{% endblock %}
+
+{% block javascript %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+<script>
+
+const objs = document.getElementById('objs');
+  
+  new Chart(objs, {
+    type: 'pie',
+    data: {
+      labels: ['No','Yes'],
+      datasets: [{
+      label: '% of Objs',
+      data: [ {% for obj in objs %}
+                          {{ ((obj[1]/total_objs)*100)|round|int }},
+                      {% endfor %}
+                  ],
+      backgroundColor: [
+      'lightblue','green'
+      ],
+      hoverOffset: 4
+    }]
+    },
+    options: {
+            plugins: {
+                legend: {
+                    position: "right",
+                }
+            }
+    }})
+
+const ratings = document.getElementById('ratings');
+  
+  new Chart(ratings, {
+    type: 'pie',
+    data: {
+      labels: ['Excellent','Good','Fair','Poor'],
+      datasets: [{
+      label: '% of Ratings',
+      data: [ {% for rating in ratings %}
+                          {{ ((rating[1]/total_ratings)*100)|round|int }},
+                      {% endfor %}
+                  ],
+      backgroundColor: [
+      'lightblue','green','blue','yellow','purple'
+      ],
+      hoverOffset: 4
+}]
+}})
+
+    const likes = document.getElementById('likes');
+  
+    new Chart(likes, {
+      type: 'pie',
+      data: {
+        labels: [{% for like in likes %}
+                '{{ like[1] }}',
+                {% endfor %}
+            ],
+        datasets: [{
+        label: '% of likes',
+        data: [ {% for like in likes %}
+                            {{ ((like[2]/total_likes)*100)|round|int }},
+                        {% endfor %}
+                    ],
+        backgroundColor: [
+        'lightblue','green','blue','yellow','purple'
+        ],
+        hoverOffset: 4
+  }]
+}})
+
+const dislikes = document.getElementById('dislikes');
+  
+    new Chart(dislikes, {
+      type: 'pie',
+      data: {
+        labels: [{% for dislike in dislikes %}
+                '{{ dislike[1] }}',
+                {% endfor %}
+            ],
+        datasets: [{
+        label: '% of likes',
+        data: [ {% for dislike in dislikes %}
+                            {{ ((dislike[2]/total_dislikes)*100)|round|int }},
+                        {% endfor %}
+                    ],
+        backgroundColor: [
+        'lightblue','green','blue','yellow','purple'
+        ],
+        hoverOffset: 4
+  }]
+}})
+  </script>
+{% endblock %}

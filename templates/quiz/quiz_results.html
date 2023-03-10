@@ -1,0 +1,42 @@
+
+
+
+{% extends "quiz_base.html"%}
+{% block content %}
+
+<div class="quiz-board">
+
+
+<h3>Quiz Results</h3>
+
+{% if quiz_results %}
+    <table>
+        <tr>
+        <th style="text-align:left">Student Name</th>
+        <th>Score</th>
+    </tr>
+    {% for r in quiz_results %}
+
+    <tr>
+        <td style="padding-right:15px">{{r.studentName}}</td>
+        {% if r.score == 10 %}
+            <td style="background-color:darkgreen;color:white;padding:10px">{{r.score}} / {{r.questions}}</td>
+        {% elif r.score >= 7 %}
+            <td style="background-color:green;color:white;padding:10px">{{r.score}} / {{r.questions}}</td>
+        {% elif r.score >= 5 %}
+            <td style="background-color:darkorange;color:white;padding:10px">{{r.score}} / {{r.questions}}</td>
+        {% elif r.score >= 3 %}
+            <td style="background-color:yellow;color:black;padding:10px">{{r.score}} / {{r.questions}}</td>
+         {% elif r.score >= 1 %}
+            <td style="background-color:red;color:white;padding:10px">{{r.score}} / {{r.questions}}</td>
+        {% endif %}
+    </tr>
+
+    {% endfor %}
+    </table>
+
+{% endif %}
+
+</div>
+
+{% endblock %}

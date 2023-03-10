@@ -1,0 +1,63 @@
+{% extends "base_template.html" %}
+{% block content %}
+    <div style="margin-bottom: -10vh;"></div>
+
+    <section class="enrolled-course">
+        <div style="font-weight: bold;" class="course_dir">
+            <a href="/">Home </a> <i>/</i><a href="/"> Courses </a> <i>/</i><a href="">{{ course.courseName }}</a>
+        </div>
+        
+        <div class="content">
+
+            <div class="course_outline">
+                {% if lessons %}
+                <h4>Course Outline</h4>
+                 <table class="hoverTable">
+                    {% for lesson in lessons %}
+                        <tr style="color:black !important;">
+                            <td>{{loop.index}}. {{ lesson.lessonName }}</td>
+                            <td><a class="lesson_link" href="/view_lesson/{{ lesson.id }}" class="learn">{{(lesson.lessonDescription|length)//200}}{{((lesson.lessonDescription|length)//200)|pluralize}} </a></td>
+                        </tr>
+                    {% endfor %}
+                </table>
+                {% else %}
+                <h4>Course Review</h4>
+                 <div class="lesson-description">
+                        {{ html|safe }}
+                    </div>
+                {% endif %}
+
+            </div>
+        </div>
+
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+        {% for category, message in messages %}
+            {% if category == "correct" %}
+                <small class="correct" class="form-text text-muted">{{ message }}</small>
+            {% endif %}
+        {% endfor %}
+        {% endif %}
+        {% endwith %}
+        
+        {% if not cas.subscription %}
+        {% if course.assignment %}
+        <form class="course_form" action="/course/{{course.id}}" method="POST">
+            <div class="input-group mb-3">
+                <input type="email" name="email" class="form-control" placeholder="Your Email" aria-label="Recipient's username" aria-describedby="basic-addon2" required>
+                <div class="input-group-append">
+                <button class="btn btn-outline-secondary assignment_button" type="submit">Sign Up for Assignments</button>
+                </div>
+            </div>
+            <small id="emailHelp" class="form-text text-muted">We love privacy too. Your information will be kept private..</small>
+        </form>
+        {% endif %}
+        {% else %}
+        <small id="emailHelp" class="form-text text-muted">You are subscribed to the assignments of this course.</small>
+        <small><a href="/unsubscribe">Unsubscribe</a></small>
+        {% endif %}
+
+        
+
+    </section>
+{% endblock %}

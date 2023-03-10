@@ -1,0 +1,59 @@
+{% extends "quiz_base.html"%}
+{% block content %}
+<div class="quiz-board" style="margin-top:25px;">
+    
+        <label for="name" style="margin-top:10px;margin-bottom:10px">Select Course</label>
+        <select id="selected_course" name="selected_course" style="width:200px;font-size:16px">
+            {% for course in courses %}
+            <option value="{{course.id}}">{{course.courseName}}</option>
+            {% endfor %}
+        </select>
+
+   
+   
+    <form action="/lesson_order" method="POST">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Lesson</th>
+                <th>Order</th>
+            </tr>
+        </thead>
+        
+        <tbody id="lesson-tbody">
+
+        </tbody>
+    
+    </table>
+    <input type="submit" value="Change Lesson Order">
+</form>
+
+    
+
+</div>
+{% endblock %}
+
+{% block javascript %}
+<script src="/static/js/displayLessons.js" ></script>
+
+<script>
+    $(function () {
+        $.getJSON("{{url_for('extract_lessons')}}", {
+            q: $('#selected_course').val(),
+            }, function (data) {
+                displayLessons(data);
+        });
+    })
+
+    $(function () {
+            $("#selected_course").on("change", function () {
+                $.getJSON("{{url_for('extract_lessons') }}",
+                    { q: $(this).val() },
+                    function (data) {                    
+                        displayLessons(data);
+                    });
+            });
+        });
+</script>
+
+{% endblock %}

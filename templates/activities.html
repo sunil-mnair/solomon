@@ -1,0 +1,15 @@
+{% extends "base_template.html" %}
+{% block content %}
+            <div class="courses">
+                {% for a in activity %}
+                    <a href="/{{ a.activityURL }}" class="course">
+                        <div class="course-img">
+                            <img src="/static/images/{{ a.activityImage}}" alt="">
+                        </div>
+                        <div class="course-desc">
+                            <h2 class="activity">{{ a.activityName }}</h2>
+                        </div>
+                    </a>
+                {% endfor %}
+            </div>
+{% endblock %}

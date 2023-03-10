@@ -1,0 +1,179 @@
+question
+Which of these can be referred to as Data?
+Data in ____bytes size is called Big Data?
+Financial Transaction Data of the Bank is
+Which of the following are Benefits of Big Data Processing?
+What is a CSV file?
+What is Python?
+Which tools are suited for Big Data?
+What is the need to Process Data?
+What is Null Value Treatment?
+What is Encoding in Data Processing?
+What is Data Visualisation?
+Why should we process the Data before visualizing?
+Which of these tools are most popular for Data Modelling in Banking?
+What is Machine Learning?
+What is SQL?;
+_____ * from customers;
+SELECT * from customers; What is customers in this query?
+"SELECT client_id, CONCAT(first,' ',last) AS fullname from customers;"
+"SELECT max(age) AS max_age, gender from customer GROUP BY gender;"
+Mark the correct JOIN statement
+SELECT from complaints;
+Which command will return a unique list of cities?
+"select * from customer,district;"
+Return all customers greater than the average customer age
+How do you create a variable named x with the numeric value 5?
+The value of a string variable can be surrounded by single quotes.
+Which operator can be used to compare two values?
+Consider the following code: for (x 1:10). Which keyword is missing inside the for loop to output the numbers 1 to 10?
+What is the correct way to create a vector of strings?
+What is the correct way to create a list of strings?
+Which function can be used to create a data frame?
+How do you start writing an if statement in R?
+Which is the correct code for installing multiple packages
+Which function is used to read a csv file?
+Which is a more accurate description of a Disruptive Business?
+Identify the TOP way in which most incumbent financial institutions are currently responding to FinTech innovation?
+Which sector has the most FinTech unicorns worldwide?
+Why has fintech grown so fast in china?
+What is the 1 key challenge faced by FinTech or BigTech Companies
+What is the main takeway of Cloud Computing in Banking?
+"__________________ algorithms enable the computers to learn from data, and even improve themselves, without being explicitly programmed"
+Which of these applications uses Machine Learning?
+Each block of a Blockchain consists of which of the following?
+Once data entered into the blockchain can be
+Match the definition to the correct word: A digital currency that is secured by cryptography
+Which the is world's first cryptocurrency?
+Cryptocurrency is managed by a bank?
+True or False: Cryptocurrency can be refunded with the help of a bank?
+Which one of the banks is named World Best Digital Bank by leading financial publications?
+Correct way to initialize a variable in Python
+"if x = '33.45', what type of variable is x?"
+Correct way to prompt a user to input data
+"if city='Abu Dhabi' and country='UAE', which of the below will work"
+"if fullname = 'David Letterman', how can it be split into firstname and lastname?"
+Which keyword is used to define a custom function in Python?
+If the value of x = '3'. Which function can be used to convert it to a number?
+Which command will create a list of 3 names?
+"if city = 'Dubai', what would print(city[0:2]) display?"
+What is the correct way to check if integer x has a value greater than zero?
+Which kinds of hits does Google Analytics track?
+What report indicates the pages of a website where users first arrived?
+What asset is used to build a remarketing list?
+What data table display compares report metrics to the website average?
+Which parameters can be included with an event hit for reporting?
+What Remarketing audiences cannot be defined by default?
+What data is Google Analytics Goals unable to track?
+What is used to create Smart Goals or Insights?
+Which three campaign parameters are recommended to manually track campaigns?
+What feature would be used to collect how many times users downloaded a product catalog?
+SQL stands for
+Which of the following is not a Relational Database?
+What is the difference between SQL and MySQL?
+"When creating a primary-key column, you should use fields containing what type of values?"
+From which class(es) of data are primary keys most often made?
+What is a foreign key?
+A relation is in 1NF if it doesn't contain any ____________?
+Which of the following statements fully describes data in 2NF?
+"When you normalize a relation by breaking it into two smaller relations, what must you do to maintain data integrity?"
+A table in ____ contains no transitive dependencies.
+Which keyword is used to create a variable in a stored procedure?
+What makes stored procedures faster than sending a Transact-SQL statement to SQL Server?
+Triggers are supported on
+"Can this query be further optimized, assuming there are no existing indexes? - SELECT * FROM deliveries WHERE YEAR(delivery_time) = 2020;"
+Which index will be optimal for this query's performance? - SELECT * FROM companies WHERE company_name = 'EverSQL' AND num_employees > 50;
+What are the ways by which the database engine can retrieve information from a table??
+What happens when a column is defined as a Primary Key?
+When does SQL Server use Indexes?
+What is a key disadvantage of using Indexes?
+Which index is faster?
+Which backup type will only capture all database modifications since the last full backup?
+You cannot take full and differential backups of files and filegroups. True or false?
+Taking a transaction log backup will truncate the transaction log. True or false?
+Which option is used to prevent users from accessing the database during recovery?
+Which SQL Server component is responsible for scheduling and running jobs?
+Which restore option should be used to restore a database to a specific point in time?
+Which restore statement can be used to test the validity of a backup set?
+WHAT DOES DBCC Stand for?
+DBCC _____ is the primary command used to identify database corruption.
+Which DBCC CHECKDB option should be used to recover from corruption as a last resort?
+"Which of these SQL Server objects, allow you to group principles together to simplify permission assignment against securables?"
+Database users must always be mapped to a server login. True of false?
+Database users must always be mapped to a server login. True of false
+Which of these role types allow you to assign permissions to them?
+Which authorization will remove a previously granted permission from a principal?
+Which of these SQL statements will give SELECT access to any object in the Sales schema to a database role named SalesUsers?
+Which SQL Server object binds a predicate to a table for use by row-level security?
+Which predicate applies to Insert operations?
+Which masking function will output a different mask depending on the data type of a column?
+Which T-SQL statement would you use to impersonate the credentials of database user?
+Which stored procedure is used to send e-mail notifications through Database Mail using T-SQL?
+You must configure a database mail profile for SQL Server agent before alerts can send notification. True or false?
+What drives custom alert actions in SQL Server Agent?
+Which of these is not a component of Policy-based Management?
+What task do you need to perform first before using the Data Collector?
+Which Query Monitoring tool is a new feature starting from SQL Server 2016?
+Which Query Store setting should be configured to capture only resource consuming queries?
+Which of the following can be done in the Query Store to ensure a query uses a specific query plan?
+What is the recommended practice for managing index fragmentation?
+What is the purpose of SQL Server statistics?
+"You have been tasked with identifying a cloud model for upgrading the email environment, as a means to reduce server and application maintenance. You recommend the Platform as a service (PaaS) model. Does the solution meet the goal?"
+Your company makes use of Platform as a Service (PaaS).Which of the following options are components that your IT employees are responsible for?
+You are required to identify a cloud service that allows for the deployment of a Linux virtual machine.Which of the following is the model you should choose?
+What is a Public Cloud?
+Which statement or statements could be used to describe a private cloud deployment?
+What is a hybrid cloud?
+Which of these options is not a PaaS offering?
+True or false: A multi-cloud strategy is the same as hybrid cloud.
+What does it mean when a public cloud provider has an availability of five nines?
+"On a public cloud, which of the following components are cloud customers responsible for?"
+documents that contain banking information labeled so they are easily identified as containing sensitive financial information.  Which of the following is a possible solution?
+Which of the following is NOT true about Cloud Computing?
+Your co-worker asks what service classification includes Microsoft 365.  Which service classification includes Microsoft 365?
+Which of the following administrators can purchase licenses?
+You have a user that needs to upload videos for view by employees.  The videos will cover training for new employees as part of the hiring process. Which service allows video upload and streaming?
+You have been tasked with creating a new site in SharePoint Online.  Which of the following is a type of site that can be created using SharePoint Online
+You deactivate the Microsoft 365 license for a device.  Which actions can the user still perform?
+Employees in your sales department will be working from home quite often.  Sales employees must collaborate on a regular basis using voice and video.  Which solution should you recommend?
+Which of the following allows you to share files with co-workers and access files from your mobile device?
+"You and a co-worker have been tasked with creating a website that will be used for employees to access the company handbook, Human Resource Paperwork and other work related policies.  Which of the following services is appropriate?"
+You plan to host your corporate website in Azure. A co-worker asks you what type of classification is website hosting.  Which of the following should you tell your co-worker is the correct classification?
+Which of the following allows collaboration with the use of a white board?
+Windows 10 Enterprise licenses can be included in your Microsoft 365 subscription plan.
+Intune can be used to deploy Office 365 to Windows 10 desktops.
+While trying to open a new support request you receive an error message stating that You don't have permission to access this page or perform this action.  Which of the following is a cause for this message?
+What kind of database is AWS DynamoDB?
+What is AWS EC2?
+AWS Regions is part of the AWS Global Infrastructure.
+Which AWS service helps you create users and provide them security access?
+With AWS EC2 you only pay for the compute time that you use
+There is a requirement to collect important metrics from AWS RDS and EC2 Instances. Which AWS service would be helpful to fulfill this requirement?
+Which AWS service do you need to use to get complete history of user activity?
+Which of the following networking component can be used to host EC2 resources in the AWS Cloud?
+Which is the archival storage solution from AWS
+Which of the following is the responsibility of the customer to ensure the availability and backup of the EBS volumes?
+A group of cells is called a ___
+"In this image, why does the value in cell G1 look slightly different from the value in the formula bar?"
+Let’s say you’re trying to find your average grade. What’s wrong with the formula shown in the image?
+You can view a formula by double-clicking the cell that contains the formula.
+Which of the following is an absolute cell reference?
+What value would Excel return for this formula? =(82-32)/5+8*2
+What feature has been used to apply the formatting shown in this image?
+What is the main advantage of selecting the Mark as Final option?
+The four areas in this image are used to create a
+What result is returned by the function =COUNT(B2:D5)?
+"In this image, which formula could you use to subtract the inventory costs from the monthly budget?"
+Which of these formulas is incorrect?
+"In this image, which formula would we use to display the text Waffles: bunny?"
+Which function can display a different value depending on a condition?
+Which of the following VLOOKUP functions is using the correct arguments?
+Which formula is guaranteed to return the phrase “You win!” if the value in cell B6 is 29?
+" If the word 'alphabet' is in cell A1, then what does the function =mid(A1, 3, 4) display?"
+What is the result of the formula =trim('Question Six')?
+ Suppose there is a formula that requires the contents of a cell from a different sheet. Can this be done?
+Which type of file is similar to an Excel File?
+Which formula will give us the Sum of Sales that have a corresponding Recieved Date?
+Which of these formulas will populate the MIN row correctly?
+In MS-Excel what does SUMIFS function do?
+In MS-Excel which functions will calculate the number of workdays between 6/9/2013 and 8/12/2013?

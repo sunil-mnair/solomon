@@ -1,0 +1,20 @@
+{% extends "quiz_base.html"%}
+{% block content %}
+<div class="quiz-board" style="margin-top:25px;">
+<form action="/select_quiz" method="POST">
+    <label for="name" style="margin-top:10px;margin-bottom:10px">Select Module</label>
+    
+    <select name="selected_course" style="width:200px;font-size:16px">
+        {% for course in courses %}
+        <option value="{{course.id}}">{{course.courseName}}</option>
+        {% endfor %}
+    </select>
+
+
+   <input type="submit" value="Start Quiz">
+</form>
+
+
+
+</div>
+{% endblock %}

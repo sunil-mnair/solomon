@@ -1,0 +1,103 @@
+{% extends "base_template.html" %}
+{% block content %}
+
+<form class="feedback_form" method="POST" action="/feedback">
+    <div class="form-group">
+        <label for="exampleInputEmail1">Company</label>
+        <input type="text" name="company" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Company" required>
+        <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1">Profession</label>
+        <input type="text" name="profession" class="form-control" id="exampleInputPassword1" placeholder="Profession" required>
+      </div>
+
+      <div class="form-group">
+        <label for="exampleInputEmail1">How would rate this Training?</label><br/>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="rating" id="inlineRadio1" value="1" required>
+          <small class="form-check-label" for="inlineRadio1">Excellent</small>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="rating" id="inlineRadio2" value="2">
+          <small class="form-check-label" for="inlineRadio2">Good</small>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="rating" id="inlineRadio3" value="3">
+          <small class="form-check-label" for="inlineRadio3">Fair</small>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="rating" id="inlineRadio4" value="4">
+          <small class="form-check-label" for="inlineRadio3">Poor</small>
+        </div>
+      </div>
+
+    <div class="form-group">
+      <label for="exampleInputEmail1">What did you like about this Training?</label><br/>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="checkbox" name="like" id="inlineRadio1" value="1">
+        <small class="form-check-label" for="inlineRadio1">Learning Material</small>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="checkbox" name="like" id="inlineRadio2" value="2">
+        <small class="form-check-label" for="inlineRadio2">Website Experience</small>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="checkbox" name="like" id="inlineRadio3" value="3">
+        <small class="form-check-label" for="inlineRadio3">Pace of Training</small>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="checkbox" name="like" id="inlineRadio4" value="4">
+        <small class="form-check-label" for="inlineRadio4">Trainers Skill and Knowledge</small>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="checkbox" name="like" id="inlineRadio5" value="5">
+        <small class="form-check-label" for="inlineRadio5">None</small>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="exampleInputEmail1">What did you dislike about this Training?</label><br/>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="checkbox" name="dislike" id="inlineRadio1" value="1">
+        <small class="form-check-label" for="inlineRadio1">Learning Material</small>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="checkbox" name="dislike" id="inlineRadio2" value="2">
+        <small class="form-check-label" for="inlineRadio2">Website Experience</small>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="checkbox" name="dislike" id="inlineRadio3" value="3">
+        <small class="form-check-label" for="inlineRadio3">Pace of Training</small>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="checkbox" name="dislike" id="inlineRadio4" value="4">
+        <small class="form-check-label" for="inlineRadio4">Trainers Skill and Knowledge</small>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="checkbox" name="dislike" id="inlineRadio4" value="5">
+        <small class="form-check-label" for="inlineRadio4">None</small>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="exampleInputEmail1">Has the training delivered on your objectives?</label><br/>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="objectives" id="inlineRadio1" value="1" required>
+        <small class="form-check-label" for="inlineRadio1">Yes</small>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="objectives" id="inlineRadio2" value="0">
+        <small class="form-check-label" for="inlineRadio2">No</small>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="exampleFormControlTextarea1">Additional Comments (if any)</label>
+      <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="comment"></textarea>
+    </div>
+
+      <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+{% endblock %}
